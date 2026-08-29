@@ -37,3 +37,52 @@ the firmware's real sampling rate and threshold — it is a feasibility
 exploration, not a finished replacement for the threshold rule.
 
 ## Repository structure
+smart-bicycle/
+├── README.md
+├── firmware/
+│ └── esp32_motion_alert.ino
+├── app/
+│ ├── main.dart
+│ ├── dashboard_screen.dart
+│ ├── notifications.dart
+│ └── pubspec.yaml
+├── ml_prototype/
+│ ├── prototype_motion_classifier.py
+│ ├── requirements.txt
+│ └── results/
+│ ├── training_curve.png
+│ ├── confusion_matrix.png
+│ └── threshold_comparison.txt
+└── docs/
+├── hardware_schematic.png
+└── demo_photos/
+
+
+## Hardware
+
+- ESP32 dev board
+- MPU6050 accelerometer/gyroscope
+- Neo-6M GPS module
+- Hall-effect sensor + magnet (wheel speed/distance)
+- Piezo buzzer (alert)
+
+*(hardware photos/schematic go in `docs/`)*
+
+## Status & next steps
+
+- [x] Motion/tamper alert via fixed accelerometer threshold — working on hardware
+- [x] GPS tracking, streamed to app
+- [x] Speed/distance/calorie telemetry via Hall sensor
+- [x] Flutter app: live gauges, map, lock/unlock, notifications
+- [x] 1D-CNN tamper classifier prototyped offline on synthetic data
+- [ ] Collect real accelerometer logs from controlled bump-vs-tamper tests
+- [ ] Retrain/validate the CNN on real data
+- [ ] Quantize and port the model to the ESP32, replacing the fixed threshold
+
+## License
+
+MIT
+
+
+
+
