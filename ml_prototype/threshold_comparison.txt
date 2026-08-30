@@ -1,0 +1,7 @@
+Comparison: 1D-CNN prototype vs existing firmware threshold rule
+(synthetic data -- see README for validation status)
+
+Test windows: 500
+Agreement with threshold rule: 77.40%
+Cases CNN correct, threshold wrong: 113/500
+Cases threshold correct, CNN wrong: 0/500
